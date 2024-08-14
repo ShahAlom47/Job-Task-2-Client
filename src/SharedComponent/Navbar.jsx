@@ -86,28 +86,13 @@ const Navbar = () => {
 
         <NavLink
 
-            to="/allRequest"
+            to="/allProducts"
             className={({ isActive }) =>
                 `nav-link hover:underline px-3 rounded-sm ${isActive ? 'bg-slide-animation is-active' : ''}`
             }
-        >Blood Request</NavLink>
+        >All Products
+        </NavLink>
 
-        <div className={`nav-link dropdown dropdown-bottom ${location.pathname === '/donateBlood' || location.pathname === '/donateMoney' ? 'bg-slide-animation is-active' : ''}`}>
-            <div onClick={() => setDonateBtn(!donateBtn)} tabIndex={0} role="button" className={`hover:text-black px-3 rounded-sm flex items-center`}>
-                Donate <IoIosArrowDown />
-            </div>
-            <ul tabIndex={0} className="dropdown-content menu bg-color-p rounded-sm z-[1] w-40 mt-1 p-2 shadow">
-                <li><Link to="/donateBlood">Donate Blood</Link></li>
-                <li><Link to="/donateMoney">Donate Money</Link></li>
-            </ul>
-        </div>
-
-        <NavLink
-            to="/bloodBank"
-            className={({ isActive }) =>
-                `nav-link hover:underline px-3 rounded-sm ${isActive ? 'bg-slide-animation is-active' : ''}`
-            }
-        >Blood Bank</NavLink>
 
         <NavLink
             to="/contact"

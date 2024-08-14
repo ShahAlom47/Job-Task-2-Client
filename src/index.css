@@ -60,7 +60,7 @@
     overflow: hidden;
     width: 100px;
     height: 40px;
-    background-color: #ea062b;
+    background-color: #0063d1;
     color: white;
     border-radius: 2px;
   }
@@ -98,7 +98,7 @@
   .swiper-button-prev, .swiper-button-next {
     bottom: 5% !important;
     top: auto !important;
-    color: #ea062b !important;
+    color: #0063d1 !important;
 }
 
 

@@ -1,11 +1,12 @@
 
-import Banner from "./Banner/Banner";
+
+import Banner2 from "./Banner/Banner2";
 import ContactSection from "./ContactSection/ContactSection";
 
 const Home = () => {
     return (
         <div className=" ">
-            <Banner></Banner>
+            <Banner2></Banner2>
             
             <ContactSection></ContactSection>
         </div>

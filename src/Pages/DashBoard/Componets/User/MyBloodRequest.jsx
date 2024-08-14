@@ -39,7 +39,7 @@ const MyBloodRequest = () => {
         Swal.fire({
             title: "Are you sure?",
             showCancelButton: true,
-            confirmButtonColor: "#ea062b",
+            confirmButtonColor: "#0063d1",
             cancelButtonColor: "#000",
             confirmButtonText: "Confirm"
         }).then(async (result) => {

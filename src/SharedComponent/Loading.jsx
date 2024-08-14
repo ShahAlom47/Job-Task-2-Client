@@ -9,8 +9,8 @@ const Loading = () => {
        
         <div className='item -mt-10'>
           
-          <Loader type='spinner-cub' bgColor={'#ea062b'} title={'Loading...'} size={80} />
-          <Loader type='bubble-loop' bgColor={'#ea062b'} title={'Loading...'} size={100} />
+          <Loader type='spinner-cub' bgColor={'#0063d1'} title={'Loading...'} size={80} />
+          <Loader type='bubble-loop' bgColor={'#0063d1'} title={'Loading...'} size={100} />
         </div>
       </div>
     </div>

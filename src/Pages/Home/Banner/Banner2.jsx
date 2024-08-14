@@ -1,73 +1,130 @@
-import { useState } from 'react';
-import 'daisyui';
-import Card from '../../../Components/Banner2Card';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import bg from '../../../assets/banner/banner-bg.jpg';
+import sideImg1 from '../../../assets/image/speaker_1.png';
+import sideImg2 from '../../../assets/image/watch_2.png';
+import sideImg3 from '../../../assets/image/watch_3.png';
+
+const slides = [
+    {
+        title: "Experience Cutting-Edge Technology",
+        subtitle: "Innovative Electronics for Modern Living",
+        buttonLink: "/products",
+        buttonText: "Shop Now",
+        sideImage: sideImg1,
+    },
+    {
+        title: "Discover Advanced Gadgets",
+        subtitle: "Top-Notch Devices for Every Need",
+        buttonLink: "/products",
+        buttonText: "Explore Gadgets",
+        sideImage: sideImg2,
+    },
+    {
+        title: "Unleash the Power of Innovation",
+        subtitle: "State-of-the-Art Electronics at Your Fingertips",
+        buttonLink: "/products",
+        buttonText: "See More",
+        sideImage: sideImg3,
+    }
+];
 
 
+const Banner = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+        }, 5000); // Change slide every 5 seconds
+        return () => clearInterval(interval);
+    }, []);
 
-const Banner2 = () => {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [modalContent, setModalContent] = useState('');
-
-    const openModal = (content) => {
-        setModalContent(content);
-        setModalIsOpen(true);
+    const nextSlide = () => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
     };
 
-    const closeModal = () => {
-        setModalIsOpen(false);
-        setModalContent('');
+    const prevSlide = () => {
+        setCurrentSlide((prevSlide) =>
+            prevSlide === 0 ? slides.length - 1 : prevSlide - 1
+        );
     };
-
-    const data = [
-        {
-            img: 'https://i.ibb.co/7zLHy0Y/luann-hunt-X20g2-GQs-Vd-A-unsplash-1.jpg',
-            title: 'Become a Donor',
-            description: 'Become a donor today and join our mission to save lives. By donating blood, you provide critical support to patients in need, offering them a second chance at life. Your generosity can make a significant difference in emergency situations and ongoing medical treatments. Take the step to become a hero in someone\'s story. Register now and be a part of a community dedicated to making a positive impact. Every drop counts, and your contribution is invaluable. Donate today and help us build a healthier, stronger future for everyone.'
-        },
-        {
-            img: 'https://i.ibb.co/7yR910R/why-donate.jpg',
-            title: 'Why Give Blood?',
-            description: 'Giving blood is one of the most selfless acts you can do to help others. Every donation you make can save up to three lives. Blood is always in high demand for surgeries, cancer treatments, chronic illnesses, and traumatic injuries. By donating, you ensure that hospitals and emergency medical services have a steady supply of blood to save lives every day. It\'s a small act of kindness with a huge impact. Plus, donating blood has health benefits for donors too, such as reduced risk of certain diseases. Be a part of this lifesaving journey.'
-        },
-        {
-            img: 'https://i.ibb.co/LZXyCfB/donate-help.jpg',
-            title: 'How Donations Help',
-            description: 'Blood donations are crucial for a functioning healthcare system. They help in a variety of medical situations, from routine surgeries to emergency trauma care. Donations are used in treating patients with cancer, anemia, and other serious health conditions. Blood is also vital for mothers and newborns during complicated childbirth. Your donation can provide platelets, plasma, and red blood cells, each serving a unique purpose in patient care. By donating blood, you are directly contributing to saving lives and improving health outcomes for countless individuals. Your support matters immensely.'
-        }
-    ];
 
     return (
-        <div className="bg-gray-200 pt-36 ">
-            <div className="card-section  max-w py-20  mx-auto">
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 p-5">
-                    {data.map((item, index) => (
-                        <Card
-                            key={index}
-                            img={item.img}
-                            title={item.title}
-                            index={index}
-                            description={item.description}
-                            onReadMore={() => openModal(item.description)}
-                        />
-                    ))}
-                </div>
-            </div>
-            {modalIsOpen && (
-                <div className="modal modal-open z-50 top-5">
-                    <div className="modal-box">
-                        <p>{modalContent}</p>
-                        <div className="modal-action">
-                            <button onClick={closeModal} className="btn btn-error">
-                                Close
-                            </button>
+        <div className='relative bg-gradient-to-br from-black to-gray-900 mb-10 h-[600px] rounded-lg overflow-hidden'>
+            <AnimatePresence initial={false}>
+                <motion.div
+                    key={currentSlide}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${bg})` }}
+                >
+                    <div className="max-w p-8">
+                        <div className="flex items-center h-full w-full p-8">
+                            <motion.div
+                                initial={{ x: '-100vw' }}
+                                animate={{ x: 0 }}
+                                exit={{ x: '-100vw' }}
+                                transition={{ duration: 1 }}
+                                className="w-1/3 flex justify-start"
+                            >
+                                <img src={slides[currentSlide].sideImage} alt="Side Image" className="h-[300px] w-auto object-contain" />
+                            </motion.div>
+
+                            <div className="w-2/3 relative flex flex-col items-center justify-center h-full">
+                                <motion.div
+                                    initial={{ y: '100vh' }}
+                                    animate={{ y: 0 }}
+                                    exit={{ y: '100vh' }}
+                                    transition={{ duration: 1 }}
+                                    className="text-center"
+                                >
+                                    <p className="uppercase font-mont text-color-p text-xl mb-4">{slides[currentSlide].subtitle}</p>
+                                    <h1 className='lg:text-5xl uppercase text-2xl font-mont font-bold text-black mb-2 w-10/12 mx-auto'>{slides[currentSlide].title}</h1>
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.5, delay: 0 }}
+                                    className="flex space-x-4 mt-6"
+                                >
+                                    <Link to={slides[currentSlide].buttonLink}>
+                                        <button
+                                        style={{ width:'200px',backgroundColor:'transparent',color:'#0063d1', border:'solid 3px  #0063d1'}}
+                                        className="btn-p font-semibold">View Collections</button>
+                                    </Link>
+                                    <Link to="/contact">
+                                        <button className="btn-p">Categories</button>
+                                    </Link>
+                                </motion.div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                </motion.div>
+            </AnimatePresence>
+
+            {/* Slide Navigation Buttons */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                <button
+                    className=" text-color-p text-2xl rounded-full px-2 shadow-lg"
+                    onClick={prevSlide}
+                >
+                    &#10094;
+                </button>
+                <button
+                    className=" text-color-p text-2xl rounded-full px-2 shadow-lg"
+                    onClick={nextSlide}
+                >
+                    &#10095;
+                </button>
+            </div>
         </div>
     );
 };
 
-export default Banner2;
-
+export default Banner;

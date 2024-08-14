@@ -1,8 +1,8 @@
 // import { NavLink } from 'react-router-dom';
-import logo from '../../src/assets/logo/blood logo2.png'
 import { IoMdCall } from 'react-icons/io';
 import { FaFacebookF, FaLinkedinIn, FaLocationDot, FaTwitter } from 'react-icons/fa6';
 import { MdOutlineAccessTime } from 'react-icons/md';
+import Logo from './Logo/Logo';
 
 const Footer = () => {
   const date= new Date()
@@ -10,22 +10,14 @@ const Footer = () => {
   return (
     <footer className="bg-[#e8e6e6] text-white">
       <div className="footer p-10 pb-5 max-w text-gray-800 flex lg:flex-row md:flex-row flex-col justify-around items-center">
-        <aside className=' flex justify-center items-center flex-col h-full'>
-          <div className='h-16 w-24'>
-            <img className=' w-full h-full' src={logo} alt="" />
-          </div>
+        <aside className=' flex justify-center items-center flex-col h-full w-1/4'>
+        
+            <Logo></Logo>
+       
 
-          <p className=' text-lg'>Donate Blood, Donate Life: Join Us Today</p>
+          <p className=' text-lg'>Your Ultimate Tech Destination</p>
         </aside>
-      
-        {/* <nav>
-          <h6 className="footer-title">Company</h6>
-          <NavLink className={'hover:underline'}>Home</NavLink>
-          <NavLink className={'hover:underline'}>About Us</NavLink>
-          <NavLink className={'hover:underline'}>Campaign</NavLink>
-          <NavLink className={'hover:underline'}>Blog</NavLink>
-          <NavLink className={'hover:underline'}>Contact Us</NavLink>
-        </nav> */}
+   
         <nav>
           
                 <div className=" ">

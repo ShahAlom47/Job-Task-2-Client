@@ -17,7 +17,7 @@ const AdminHome = () => {
         transition: 'background-color 0.3s ease, color 0.3s ease',
         textTransform: 'none',
         '&.Mui-selected': {
-            backgroundColor: '#ea062b',
+            backgroundColor: '#0063d1',
             color: 'white',
         },
     };
@@ -38,7 +38,7 @@ const AdminHome = () => {
                                 display: 'flex',
                             },
                             '& .MuiTabs-scrollButtons button': {
-                                color: '#ea062b', // Customize arrow color
+                                color: '#0063d1', // Customize arrow color
                             },
                         }}
                         TabIndicatorProps={{
