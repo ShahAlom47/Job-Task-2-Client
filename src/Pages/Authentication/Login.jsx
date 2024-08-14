@@ -8,56 +8,44 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
+import SocialLogin from '../../SharedComponent/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { login } = useUser()
+    const [error, setError] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [showPass,setShowPass]=useState(false)
     const navigate =useNavigate()
     const location = useLocation();
- 
+  
     const onSubmit = async (data) => {
-        setEmailError('');
+        setError('');
+        setEmailError('')
         setPasswordError('');
-        try {
-        const res = await login(data.email, data.password)
-        console.log(res);
-      
-        if (res.message === 'Login successful') {
-       
-            toast.success(res.message)
-            reset()
+   
+        login(data.email, data.password)
+        .then(()=>{
+               
+            toast.success("Login success");
+            reset();
             setTimeout(() => {
                 navigate(location.state?.from|| location.state || '/', { replace: true });
-            }, 2000);
-            return
-        }
+            }, 1000);
+        })
+        .catch((error) => {
+          
+          
+            if(error.message=='Firebase: Error (auth/invalid-credential).'){
+                setError('Email or password do not match. Please check again')
+            toast.error('Email or password do not match. Please check again')
+            }   
 
-        else if(res.message === 'Invalid email'){
-            setEmailError(res.message)
-            return
-        }
-        else if(res.message === 'Invalid  password'){
-            setPasswordError(res.message)
-            return
-        }
-        else{
-            toast.warn(res.message)
-        }
-
-
-
-   
-
-           
-
-        } catch (error) {
-            console.error("Login error:", error);
-        }
-    };
-
+        });
+    }
+      
+ 
     return (
         <div>
             <ToastContainer />
@@ -98,8 +86,11 @@ const Login = () => {
                             {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
                             {passwordError && <p className="text-red-500 text-sm mt-1">{passwordError}</p>}
                         </div>
+                        {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
                         <button style={{ width: '100%' }} type="submit" className="btn-p w-full mt-4">Login</button>
                     </form>
+                    <div className="divider">OR</div>
+                    <SocialLogin></SocialLogin>
                     <p className=' text-center my-7 font-semibold '>Don`t have an account?<Link to={'/register'}><button className='btn btn-link '> Register Now</button></Link></p>
                 </div>
             </div>

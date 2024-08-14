@@ -6,18 +6,19 @@ import 'react-datepicker/dist/react-datepicker.css';
 import useUser from '../../CustomHocks/useUser';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
 import { updateProfile } from 'firebase/auth';
 import auth from '../../../firebase.config';
 import useAxiosPublic from '../../CustomHocks/useAxiosPublic';
+import SocialLogin from '../../SharedComponent/SocialLogin/SocialLogin';
 
 
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const AxiosPublic = useAxiosPublic()
-
+    const location=useLocation()
 
     const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate();
@@ -32,16 +33,15 @@ const Register = () => {
                 updateProfile(auth.currentUser, {
                     displayName: data.name,
                 })
-                    .then((res) => {
-                        console.log(res, '22');
+                    .then(() => {
                         const userInfo = { email: data.email, name: data.name, photoURL: auth.currentUser.photoURL, role: 'user' }
                         AxiosPublic.post("/user/addUser", userInfo)
                             .then(res => {
                                 if (res?.data?.insertedId) {
                                     toast.success('Account Created Successfully ')
-                                    // reset()
+                                    reset()
                                     setTimeout(() => {
-                                        // navigate('/')
+                                        navigate(location.state?.from|| location.state || '/', { replace: true });
                                     }, 2000);
                                     return
                                 }
@@ -122,6 +122,8 @@ const Register = () => {
 
                         <button style={{ width: '100%' }} type="submit" className="btn-p w-full mt-4">Register</button>
                     </form>
+                    <div className="divider">OR</div>
+                    <SocialLogin></SocialLogin>
                     <p className=' text-center my-7 font-semibold '>Already have an account?<Link to={'/login'}><button className='btn btn-link '> Login Now</button></Link></p>
                 </div>
             </div>

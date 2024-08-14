@@ -26,6 +26,8 @@ const Navbar = () => {
     const location = useLocation();
     const { playSound } = useSound()
     const dropdownRef = useRef(null)
+  
+
 
     useEffect(() => {
         let prevSPos = window.pageYOffset;
@@ -155,7 +157,7 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     <ul tabIndex={0} className="-mt-1 z-[1] text-white p-2 shadow menu menu-sm dropdown-content bg-color-p rounded-sm w-32">
-                                        <li className='border-b-2 pl-2  uppercase' >{user?.name} </li>
+                                        <li className='border-b-2 pl-2  uppercase' >{user?.displayName} </li>
                                         <li><Link to={'/dashBoard'}><a>My Profile</a></Link></li>
                                         <li><a onClick={() => logout()}>Logout</a></li>
                                     </ul>
