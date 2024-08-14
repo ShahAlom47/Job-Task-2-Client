@@ -14,10 +14,11 @@ import useUser from '../CustomHocks/useUser';
 import NotificationIcon from '../Components/NotificationIcon';
 import { IoIosArrowDown } from 'react-icons/io';
 import useSound from '../CustomHocks/useSound';
+import Logo from './Logo/Logo';
 
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
-    const [btn,setBtn]=useState(false)
+    const [btn, setBtn] = useState(false)
     const [visible, setVisible] = useState(true);
     const [theme, setTheme] = useState(true);
     const [themData, setThemeData] = useState(null);
@@ -26,7 +27,7 @@ const Navbar = () => {
     const location = useLocation();
     const { playSound } = useSound()
     const dropdownRef = useRef(null)
-  
+
 
 
     useEffect(() => {
@@ -45,7 +46,7 @@ const Navbar = () => {
 
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-              setOpen(false)
+                setOpen(false)
             }
         };
 
@@ -138,7 +139,10 @@ const Navbar = () => {
 
     return (
         <div className={` flex lg:h-[50px] md:h-[40px] h-[35px] border-b- shadow-md shadow-black  bg-gradient-to-t from-[#00000000] to-[#0000004f]  w-full m-auto" p-0  z-50 fixed  ${visible ? 'top-0 transition-all' : '-top-20 transition-all'} duration-1000 `}>
-            <div className=" bg-gray-100 w-3/12 flex justify-evenly items-center"><img className=' h-full' src={logo} alt="" /></div>
+            <div className=" bg-gray-100 w-3/12 flex justify-evenly items-center">
+                <Logo></Logo>
+            </div>
+
             <div onClick={() => playSound('click')} className=' bg-color-p flex justify-end items-center w-full font-medium'>
                 <div className=" hidden bg-color- max-w flex-1 lg:flex md:flex text-white justify-center font-light items-center gap-4 pl-5 lg:text-xl md:text-sm">
                     {nav}
@@ -174,9 +178,9 @@ const Navbar = () => {
                     }
 
                 </div>
-      {!isOpen?      
+                {!isOpen ?
                     <button onClick={() => setOpen(!isOpen)} className=' md:hidden lg:hidden flex  mx-1 px-1 hover:text-black  rounded-sm bg-opacity-5 text-white text-2xl btn btn-sm bg-transparent border-none '><RxHamburgerMenu className='' /></button>
-           :         <p  className=' md:hidden lg:hidden text-white flex  mx-1 px-1 hover:text-black  rounded-sm bg-opacity-5 text-2xl btn btn-sm bg-transparent border-none '><AiOutlineMenuFold className='' /></p>
+                    : <p className=' md:hidden lg:hidden text-white flex  mx-1 px-1 hover:text-black  rounded-sm bg-opacity-5 text-2xl btn btn-sm bg-transparent border-none '><AiOutlineMenuFold className='' /></p>
 
 
                 }
