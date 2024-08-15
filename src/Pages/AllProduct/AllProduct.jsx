@@ -9,6 +9,9 @@ import PriceFilter from "./PriceFilter/PriceFilter";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../CustomHocks/useAxiosPublic";
 import CategoryMenu from "./DropDownMenu/DropDownMenu";
+import Loading from "../../SharedComponent/Loading";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import ProductCard from "./ProductCard/ProductCard";
 
 const AllProduct = () => {
     const AxiosPublic = useAxiosPublic();
@@ -146,7 +149,7 @@ const AllProduct = () => {
                             </button>
                             <button
                                 onClick={() => setCardLayOut(true)}
-                                className={`text-2xl ${cardLayOut ? 'text-color-p' : ''}`}
+                                className={`text-3xl ${cardLayOut ? 'text-color-p' : ''}`}
                             >
                                 <BsList />
                             </button>
@@ -154,20 +157,19 @@ const AllProduct = () => {
                     </div>
 
 
-                    <div className="flex-1 border">
+                    <div className="flex-1">
                         {/* Card container */}
-                        {isPending && <p>Loading...</p>}
-                        {error && <p>Error loading data</p>}
+                        {isPending && <Loading></Loading>}
+                        {error && <ErrorPage></ErrorPage>}
                         {data?.products && (
-                            <div className=" grid grid-cols-3 gap-2">
+                            <div className=" grid grid-cols-3 gap-4 my-5">
                                 {/* Render products */}
                                 {data?.products?.map(product => (
-                                    <div className=" border-4 m-3" key={product.id}>
-                                        <h1> name:{product?.productName}</h1>
-                                        <h1> brand:{product?.brand}</h1>
-                                        <h1> Category:{product?.category}</h1>
-                                        <h1> price:{product?.price}</h1>
-                                         <img src={product?.productImage} alt="" /></div>
+                                    <div className=" overflow-hidden border" key={product.id}>
+
+                                        <ProductCard  data={product} ></ProductCard>
+                                    </div>
+                                       
                                 ))}
                             </div>
                         )}
@@ -178,7 +180,8 @@ const AllProduct = () => {
                 <button
                     onClick={() => setPage(prev => Math.max(prev - 1, 1))}
                     disabled={page === 1}
-                    className="px-4 py-2 bg-gray-300 rounded"
+                    className=" btn-p"
+                    style={{borderRadius:'50px 0px 0px 50px'}}
                 >
                     Prev
                 </button>
@@ -186,7 +189,8 @@ const AllProduct = () => {
                 <button
                     onClick={() => setPage(prev => Math.min(prev + 1, totalPages))}
                     disabled={page === totalPages}
-                    className="px-4 py-2 bg-gray-300 rounded"
+                    className=" btn-p"
+                    style={{borderRadius:'0px 50px 50px 0px'}}
                 >
                     Next
                 </button>

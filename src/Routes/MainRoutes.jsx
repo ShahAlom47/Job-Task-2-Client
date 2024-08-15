@@ -13,6 +13,7 @@ import DashBoard from "../Pages/DashBoard/DashBoard";
 import EditProfile from "../Pages/DashBoard/Componets/EditProfile/EditProfile";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AllProduct from "../Pages/AllProduct/AllProduct";
+import ProductDetails from "../Pages/AllProduct/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/allProducts",
         element: <div><AnimatedLayout><AllProduct></AllProduct></AnimatedLayout></div>,
+      },
+      {
+        path: "/productDetails/:id",
+        element: <div><AnimatedLayout><ProductDetails></ProductDetails></AnimatedLayout></div>,
       },
 
 
