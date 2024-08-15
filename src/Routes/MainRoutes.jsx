@@ -12,6 +12,7 @@ import PrivetRouter from "./PrivetRouter/PrivetRouter";
 import DashBoard from "../Pages/DashBoard/DashBoard";
 import EditProfile from "../Pages/DashBoard/Componets/EditProfile/EditProfile";
 import AboutUs from "../Pages/AboutUs/AboutUs";
+import AllProduct from "../Pages/AllProduct/AllProduct";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <div><AnimatedLayout><Home></Home></AnimatedLayout></div>,
+      },
+      {
+        path: "/allProducts",
+        element: <div><AnimatedLayout><AllProduct></AllProduct></AnimatedLayout></div>,
       },
 
 

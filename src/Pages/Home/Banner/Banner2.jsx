@@ -84,7 +84,7 @@ const Banner = () => {
                                     className="text-center"
                                 >
                                     <p className="uppercase font-mont text-color-p lg:text-xl md:text-xl text-lg  mb-4">{slides[currentSlide].subtitle}</p>
-                                    <h1 className='lg:text-5xl uppercase md:text-4xl text-2xl font-mont font-bold text-black mb-2 w-10/12 mx-auto'>{slides[currentSlide].title}</h1>
+                                    <h1 className='lg:text-5xl uppercase md:text-4xl text-2xl font-mont font-bold text-black mb-2 lg:w-10/12 md:10/12 mx-auto'>{slides[currentSlide].title}</h1>
                                 </motion.div>
                              
                            
@@ -94,16 +94,14 @@ const Banner = () => {
                                    animate={{ y: 0 }}
                                    exit={{ x: '100vh' }}
                                     transition={{ duration: 1, delay: 1 }}
-                                    className="flex justify-center lg:w-8/12 md:w-8/12  w-full  space-x-4 lg:ml-auto md:ml-auto ml-1"
+                                    className="flex justify-center lg:w-8/12 md:w-8/12  lg:-mt-12 md:-mt-12 w-full  space-x-4 lg:ml-auto md:ml-auto ml-1"
                                 >
                                     <Link to={slides[currentSlide].buttonLink}>
                                         <button
                                         style={{ width:'150px',backgroundColor:'transparent',color:'#0063d1', border:'solid 3px  #0063d1'}}
                                         className="btn-p font-semibold">View Collections</button>
                                     </Link>
-                                    <Link to="/contact">
-                                        <button className="btn-p">Categories</button>
-                                    </Link>
+                                    
                                 </motion.div>
                     </div>
                 </motion.div>

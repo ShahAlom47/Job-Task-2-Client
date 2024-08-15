@@ -41,7 +41,7 @@ const Footer = () => {
         </nav>
       </div>
       <div className=' bg-slate-900 p-3 text-center'>
-      <p>&copy; {year} [Red Love]. All Rights Reserved.</p>
+      <p>&copy; {year} [Z Zone]. All Rights Reserved.</p>
       </div>
     </footer>
   );

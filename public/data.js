@@ -1,5 +1,5 @@
-{
-    "products": [
+
+    [
       {
         "productName": "Luxury Yacht",
         "productImage": "https://images.unsplash.com/photo-1507143027275-a7f8fDE3MjM2NTgyNTB8MA&ixlib=rb-4.0.3&q=80&w=1080",

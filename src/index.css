@@ -95,14 +95,14 @@
  
 
 
-  .swiper-button-prev, .swiper-button-next {
+  /* .swiper-button-prev, .swiper-button-next {
     bottom: 5% !important;
     top: auto !important;
     color: #0063d1 !important;
-}
+} */
 
 
-/* modal */
+/* modal
 .btn-text-color{
 color: black;
 }
@@ -116,9 +116,9 @@ background-color: rgba(0, 0, 0, 0.261);
   border: 2px solid red;
   border-radius: 4px;
   background-color: rgba(255, 0, 0, 0.1); /* Optional: Adds a background color */
-}
+/* }  */
 
-.Mui-selected {
+/* .Mui-selected {
   color: #fafcff;
 }
 
@@ -128,20 +128,20 @@ background-color: rgba(0, 0, 0, 0.261);
 
 .blood-card:hover {
   transform: scale(1.05);
-}
+} */
 
 
 
-table.rtr-table tbody tr:hover td{
+/* table.rtr-table tbody tr:hover td{
  font-weight: 300 !important;
  color: black !important;
  background-color: rgba(100, 96, 96, 0.244) !important;
-}
+} */
 
 
 /* navbar button animated style  */
 .bg-slide-animation {
-  background: linear-gradient(to right, transparent 50%, #2d3748 30%);
+  background: linear-gradient(to right, transparent 20%, #2d37485e 10%);
   background-size: 200% 100%;
   transition: background-position 0.8s ease-in-out;
 }
@@ -153,14 +153,3 @@ table.rtr-table tbody tr:hover td{
 
 
 
-tbody .open td {
-  min-height: 65px !important;
-  background-color: none !important;
-  padding-top:25px !important;
-}
-
-
-table.rtr-table tbody td:before {
-
-  top: 9px !important;
-}

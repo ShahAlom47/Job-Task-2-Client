@@ -6,7 +6,7 @@ import ContactSection from "./ContactSection/ContactSection";
 const Home = () => {
     return (
         <div className=" ">
-            <Banner2></Banner2>
+            {/* <Banner2></Banner2> */}
             
             <ContactSection></ContactSection>
         </div>
