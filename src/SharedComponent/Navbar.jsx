@@ -124,7 +124,7 @@ const Navbar = () => {
 
     return (
         <div className={` flex lg:h-[50px] md:h-[40px] h-[35px] border-b- shadow-md shadow-black  bg-gradient-to-t from-[#00000000] to-[#0000004f]  w-full m-auto" p-0  z-50 fixed  ${visible ? 'top-0 transition-all' : '-top-20 transition-all'} duration-1000 `}>
-            <div className=" bg-gray-100 w-3/12 flex justify-evenly items-center">
+            <div className=" bg-gray-100 lg:w-3/12 md:w-3/12 w-4/12 flex justify-evenly items-center">
                 <Logo></Logo>
             </div>
 

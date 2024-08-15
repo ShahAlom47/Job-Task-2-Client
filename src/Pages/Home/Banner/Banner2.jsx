@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import bg from '../../../assets/banner/banner-bg.jpg';
@@ -77,9 +77,9 @@ const Banner = () => {
 
                             <div className="w-2/3 relative flex flex-col items-center justify-center h-full">
                                 <motion.div
-                                    initial={{ y: '100vh' }}
-                                    animate={{ y: 0 }}
-                                    exit={{ y: '100vh' }}
+                                    initial={{ x: '100vh' }}
+                                    animate={{ x: 0 }}
+                                    exit={{ x: '100vh' }}
                                     transition={{ duration: 1 }}
                                     className="text-center"
                                 >
@@ -87,10 +87,10 @@ const Banner = () => {
                                     <h1 className='lg:text-5xl uppercase text-2xl font-mont font-bold text-black mb-2 w-10/12 mx-auto'>{slides[currentSlide].title}</h1>
                                 </motion.div>
                                 <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ duration: 0.5, delay: 0 }}
+                                   initial={{ y: '100vh' }}
+                                   animate={{ y: 0 }}
+                                   exit={{ y: '100vh' }}
+                                    transition={{ duration: 1, delay: 1 }}
                                     className="flex space-x-4 mt-6"
                                 >
                                     <Link to={slides[currentSlide].buttonLink}>
@@ -108,7 +108,7 @@ const Banner = () => {
                 </motion.div>
             </AnimatePresence>
 
-            {/* Slide Navigation Buttons */}
+         
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
                 <button
                     className=" text-color-p text-2xl rounded-full px-2 shadow-lg"
