@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
 const PriceFilter = ({setMinPriceRange,setMaxPriceRange}) => {
-    const [range, setRange] = useState([20, 1000]); 
+    const [range, setRange] = useState([20, 10000]); 
   
     const handleSliderChange = (value) => {
         setRange(value);

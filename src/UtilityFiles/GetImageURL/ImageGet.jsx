@@ -54,7 +54,7 @@ function ImageGallery() {
   return (
     <div>
       {Object.keys(categoryImages).length > 0 ? (
-        <div className="image-gallery">
+        <div className="image-gallery grid grid-cols-4 gap-4">
           {Object.entries(categoryImages).map(([category, urls]) => (
             <div key={category}>
               <h3>{category}</h3>
