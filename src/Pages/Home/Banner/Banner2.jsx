@@ -52,7 +52,7 @@ const Banner = () => {
     };
 
     return (
-        <div className='relative bg-gradient-to-br from-black to-gray-900 mb-10 h-[600px] rounded-lg overflow-hidden'>
+        <div className='relative bg-gradient-to-br from-black to-gray-900 mb-10 lg:h-[600px] md:h-[500px] h-[400px] rounded-sm overflow-hidden'>
             <AnimatePresence initial={false}>
                 <motion.div
                     key={currentSlide}
@@ -63,19 +63,19 @@ const Banner = () => {
                     className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${bg})` }}
                 >
-                    <div className="max-w p-8">
-                        <div className="flex items-center h-full w-full p-8">
+                    <div className="max-w lg:p-8 md:p-8  p-3">
+                        <div className="flex items-center h-full w-full pt-8">
                             <motion.div
                                 initial={{ x: '-100vw' }}
                                 animate={{ x: 0 }}
                                 exit={{ x: '-100vw' }}
                                 transition={{ duration: 1 }}
-                                className="w-1/3 flex justify-start"
+                                className="w-1/3 flex justify-start items-start pb-10"
                             >
-                                <img src={slides[currentSlide].sideImage} alt="Side Image" className="h-[300px] w-auto object-contain" />
+                                <img src={slides[currentSlide].sideImage} alt="Side Image" className="lg:h-[300px] md:h-[250px] h-[150px] w-auto object-contain" />
                             </motion.div>
 
-                            <div className="w-2/3 relative flex flex-col items-center justify-center h-full">
+                           
                                 <motion.div
                                     initial={{ x: '100vh' }}
                                     animate={{ x: 0 }}
@@ -83,27 +83,28 @@ const Banner = () => {
                                     transition={{ duration: 1 }}
                                     className="text-center"
                                 >
-                                    <p className="uppercase font-mont text-color-p text-xl mb-4">{slides[currentSlide].subtitle}</p>
-                                    <h1 className='lg:text-5xl uppercase text-2xl font-mont font-bold text-black mb-2 w-10/12 mx-auto'>{slides[currentSlide].title}</h1>
+                                    <p className="uppercase font-mont text-color-p lg:text-xl md:text-xl text-lg  mb-4">{slides[currentSlide].subtitle}</p>
+                                    <h1 className='lg:text-5xl uppercase md:text-4xl text-2xl font-mont font-bold text-black mb-2 w-10/12 mx-auto'>{slides[currentSlide].title}</h1>
                                 </motion.div>
-                                <motion.div
+                             
+                           
+                        </div>
+                        <motion.div
                                    initial={{ y: '100vh' }}
                                    animate={{ y: 0 }}
-                                   exit={{ y: '100vh' }}
+                                   exit={{ x: '100vh' }}
                                     transition={{ duration: 1, delay: 1 }}
-                                    className="flex space-x-4 mt-6"
+                                    className="flex justify-center lg:w-8/12 md:w-8/12  w-full  space-x-4 lg:ml-auto md:ml-auto ml-1"
                                 >
                                     <Link to={slides[currentSlide].buttonLink}>
                                         <button
-                                        style={{ width:'200px',backgroundColor:'transparent',color:'#0063d1', border:'solid 3px  #0063d1'}}
+                                        style={{ width:'150px',backgroundColor:'transparent',color:'#0063d1', border:'solid 3px  #0063d1'}}
                                         className="btn-p font-semibold">View Collections</button>
                                     </Link>
                                     <Link to="/contact">
                                         <button className="btn-p">Categories</button>
                                     </Link>
                                 </motion.div>
-                            </div>
-                        </div>
                     </div>
                 </motion.div>
             </AnimatePresence>

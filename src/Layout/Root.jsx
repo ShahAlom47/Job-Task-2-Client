@@ -29,7 +29,7 @@ const Root = () => {
 
   return (
     loading ? <Loading></Loading> :
-      <div className="mt-12">
+      <div className="mt-10">
         <Navbar></Navbar>
         {
           pageLoading ? <Loading></Loading> : <Outlet className=''></Outlet>
