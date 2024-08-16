@@ -21,9 +21,9 @@ const SearchBar = ({ setSearchTerm }) => {
 
     return (
         <div>
-            <form onSubmit={handleForm} className="rounded-sm flex">
+            <form onSubmit={handleForm} className="rounded-sm flex lg:h-12 md:h-12 h-7 ">
                 <input
-                    className="p-[14px] outline-none w-full border-2 border-r-0 rounded-l-sm"
+                    className="lg:p-[14px] md:p-[14px] px-4  outline-none w-full border-2 border-r-0 rounded-l-sm"
                     type="text"
                     name="value"
                     placeholder="Find Your Product"
@@ -31,7 +31,7 @@ const SearchBar = ({ setSearchTerm }) => {
                     onChange={handleChange}
                 />
                 <button
-                    className="bg-color-p h-full p-4 rounded-r-sm active:active-btn"
+                    className="bg-color-p h-full lg:p-4 md:p-4 p-1  rounded-r-sm active-btn"
                     type="submit"
                 >
                     {icon}
@@ -46,7 +46,7 @@ const icon = (
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"
         fill="currentColor"
-        className="h-6 w-6 opacity-100 text-white"
+        className="h-6 w-6 pb-1 opacity-100 text-white"
     >
         <path
             fillRule="evenodd"

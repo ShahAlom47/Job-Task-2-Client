@@ -15,7 +15,7 @@ const SortMenu = ({setSortValue,openSortMenu,setSortMenu}) => {
                                 setSortMenu(false)
                                 setSortValue('High to Low')
                             }}
-                            className="py-2 border-b-2 px-4 font-semibold hover:bg-gray-100 cursor-pointer"
+                            className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                         >
                            Price High to Low
                         </li>
@@ -25,7 +25,7 @@ const SortMenu = ({setSortValue,openSortMenu,setSortMenu}) => {
                                 setSortMenu(false)
                                 setSortValue('Low to High')
                             }}
-                            className="py-2 border-b-2 px-4 font-semibold hover:bg-gray-100 cursor-pointer"
+                            className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                         >
                            Price Low to High
                         </li>
@@ -35,7 +35,7 @@ const SortMenu = ({setSortValue,openSortMenu,setSortMenu}) => {
                                 setSortMenu(false)
                                 setSortValue('Latest')
                             }}
-                            className="py-2 border-b-2 px-4 font-semibold hover:bg-gray-100 cursor-pointer"
+                            className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                         >
                           Latest Product
                         </li>

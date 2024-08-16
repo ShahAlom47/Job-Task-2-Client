@@ -20,17 +20,17 @@ const ContactUs = () => {
                             <ContactForm></ContactForm>
                         </div>
                     </div>
-                    <div className="flex-1 p-6 bg-color-p text-white flex flex-col justify-around">
-                        <h2 className="text-lg font-bold mb-4 ">Quality and Service You Can Trust!</h2>
-                        <h1 className="text-3xl font-bold mb-5">Dedicated Customer Support</h1>
+                    <div className="flex-1 lg:p-6 md:p-5 p-2 bg-color-p text-white flex flex-col justify-around">
+                        <h2 className="lg:text-lg md:text-lg text-base font-bold mb-4 ">Quality and Service You Can Trust!</h2>
+                        <h1 className="lg:text-3xl md:text-3xl text-xl font-bold mb-5">Dedicated Customer Support</h1>
                         <p className="mb-4">We strive to provide excellent customer service for all your needs. Whether you`re purchasing a new boat, upgrading your office, or looking for the latest tech, we’re here to help. Get in touch with us for any questions or assistance. Our team is ready to ensure you have a great shopping experience.</p>
-                        <h2 className="text-lg font-semibold flex items-center gap-4"><IoMdCall /> <span>Customer Support Line: (002) 012612457</span></h2>
-                        <h2 className="text-lg font-semibold flex items-center gap-4"><FaLocationDot /> <span>Location: Street 68, Manhattan, New York</span></h2>
-                        <h2 className="text-lg font-semibold flex items-center gap-4"><MdOutlineAccessTime /> <span>Mon - Fri: 8:00 am - 7:00 pm</span></h2>
+                        <h2 className="text-base lg:text-lg md:text-lg font-semibold flex items-center gap-4"><IoMdCall /> <span>Customer Support Line: (002) 012612457</span></h2>
+                        <h2 className="text-base lg:text-lg md:text-lg font-semibold flex items-center gap-4"><FaLocationDot /> <span>Location: Street 68, Manhattan, New York</span></h2>
+                        <h2 className="text-base lg:text-lg md:text-lg font-semibold flex items-center gap-4"><MdOutlineAccessTime /> <span>Mon - Fri: 8:00 am - 7:00 pm</span></h2>
                     </div>
                 </div>
 
-                <div className="flex justify-evenly gap-5 my-9">
+                <div className="flex flex-wrap justify-evenly gap-5 my-9">
                     <a className="btn-p flex justify-center items-center gap-2" target="blank" href="https://www.facebook.com/sai.ami.393"><FaFacebookF /> Facebook</a>
                     <a className="btn-p flex justify-center items-center gap-2" target="blank" href="https://www.linkedin.com/in/shah-alom-626322290/"><FaLinkedinIn /> Linkedin</a>
                     <a className="btn-p flex justify-center items-center gap-2" target="blank" href="https://www.facebook.com/sai.ami.393"><FaTwitter /> Twitter</a>

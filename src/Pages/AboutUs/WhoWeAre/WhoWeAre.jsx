@@ -25,10 +25,10 @@ const WhoWeAre = () => {
     return (
         <div className='max-w'>
             <div id="section1" className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-start py-6">
-                <div className='lg:px-10 md:px-8 px-4 '>
+                <div className='lg:px-10 md:px-8 px-2 '>
                    <div className="border-l-8 border-color-p pl-2">
-                   <h3 className='text-lg font-semibold mb-3 text-color-p'>Your Trusted Marketplace</h3>
-                   <h1 className='text-4xl font-bold mb-3 text-black'>Who We Are</h1>
+                   <h3 className='lg:text-lg md:text-lg text-base font-semibold mb-3 text-color-p'>Your Trusted Marketplace</h3>
+                   <h1 className='lg:text-4xl md:text-3xl text-xl font-bold mb-3 text-black'>Who We Are</h1>
                    </div>
                     <div className="text-gray-600 font-medium">
                         <p>

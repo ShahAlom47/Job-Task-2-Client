@@ -20,7 +20,7 @@ const CategoryMenu = ({setCategory,openCatBtn,setCatBtn,params}) => {
                          onClick={() =>{ 
                              setCatBtn(false)
                              setCategory(null)}}
-                         className="py-2 border-b-2 px-4 font-semibold hover:bg-gray-100 cursor-pointer"
+                         className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                      >
                         All
                      </li>
@@ -33,7 +33,7 @@ const CategoryMenu = ({setCategory,openCatBtn,setCatBtn,params}) => {
                                     onClick={() =>{ 
                                         setCatBtn(false)
                                         setCategory(category)}}
-                                    className="py-2 border-b-2 px-4 font-semibold hover:bg-gray-100 cursor-pointer"
+                                    className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                                 >
                                     {category}
                                 </li>
@@ -50,7 +50,7 @@ const CategoryMenu = ({setCategory,openCatBtn,setCatBtn,params}) => {
                                     onClick={() =>{ 
                                         setCatBtn(false)
                                         setCategory(category)}}
-                                    className="py-2 border-b-2 px-4 font-semibold hover:bg-gray-100 cursor-pointer"
+                                    className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                                 >
                                     {category}
                                 </li>

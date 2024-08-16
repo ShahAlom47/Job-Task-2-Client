@@ -52,7 +52,7 @@ const Banner = () => {
     };
 
     return (
-        <div className='relative bg-gradient-to-br from-black to-gray-900 mb-10 lg:h-[600px] md:h-[500px] h-[400px] rounded-sm overflow-hidden'>
+        <div className='relative bg-gradient-to-br from-black to-gray-900 mb-10 lg:h-[600px] h-[500px]  rounded-sm overflow-hidden'>
             <AnimatePresence initial={false}>
                 <motion.div
                     key={currentSlide}
@@ -64,13 +64,13 @@ const Banner = () => {
                     style={{ backgroundImage: `url(${bg})` }}
                 >
                     <div className="max-w lg:p-8 md:p-8  p-3">
-                        <div className="flex items-center h-full w-full pt-8">
+                        <div className="flex lg:flex-row md:flex-row flex-col-reverse justify-center items-center h-full w-full pt-8">
                             <motion.div
                                 initial={{ x: '-100vw' }}
                                 animate={{ x: 0 }}
                                 exit={{ x: '-100vw' }}
                                 transition={{ duration: 1 }}
-                                className="w-1/3 flex justify-start items-start pb-10"
+                                className=" lg:w-1/3  md:w-1/3 w-full flex lg:justify-start md:justify-start justify-center items-start pb-10"
                             >
                                 <img src={slides[currentSlide].sideImage} alt="Side Image" className="lg:h-[300px] md:h-[250px] h-[150px] w-auto object-contain" />
                             </motion.div>
@@ -83,8 +83,8 @@ const Banner = () => {
                                     transition={{ duration: 1 }}
                                     className="text-center"
                                 >
-                                    <p className="uppercase font-mont text-color-p lg:text-xl md:text-xl text-lg  mb-4">{slides[currentSlide].subtitle}</p>
-                                    <h1 className='lg:text-5xl uppercase md:text-4xl text-2xl font-mont font-bold text-black mb-2 lg:w-10/12 md:10/12 mx-auto'>{slides[currentSlide].title}</h1>
+                                    <p className="uppercase font-mont text-color-p lg:text-xl md:text-xl text-base  mb-4">{slides[currentSlide].subtitle}</p>
+                                    <h1 className='lg:text-5xl uppercase md:text-4xl text-xl font-mont font-bold text-black mb-2 lg:w-10/12 md:10/12 mx-auto'>{slides[currentSlide].title}</h1>
                                 </motion.div>
                              
                            

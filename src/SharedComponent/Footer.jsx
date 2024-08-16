@@ -9,8 +9,8 @@ const Footer = () => {
   const year= date.getFullYear()
   return (
     <footer className="bg-[#e8e6e6] text-white">
-      <div className="footer p-10 pb-5 max-w text-gray-800 flex lg:flex-row md:flex-row flex-col justify-around items-center">
-        <aside className=' flex justify-center items-center flex-col h-full w-1/4'>
+      <div className="footer lg:p-10 md:p-8 p-2 pb-5 max-w text-gray-800 flex lg:flex-row md:flex-row flex-col justify-around items-center">
+        <aside className=' flex justify-center items-center flex-col h-full w-full lg:w-1/4 md:w-1/4'>
         
             <Logo></Logo>
        
@@ -20,17 +20,17 @@ const Footer = () => {
    
         <nav>
           
-                <div className=" ">
+                <div className="p-1 ">
                    
-                    <div className="  bg-color- text-stone-700 flex flex-col justify-around">
-                      <h2 className="text-lg font-medium flex items-center gap-4"><IoMdCall /> <span>Emergency Line: (002) 012612457</span></h2>
-                        <h2 className="text-lg font-medium flex items-center gap-4"><FaLocationDot /> <span>Location: Street 68, Mahattan,
+                    <div className=" lg:text-lg md:text-lg text-base  bg-color- text-stone-700 flex flex-col justify-around">
+                      <h2 className=" font-medium flex items-center gap-4"><IoMdCall /> <span>Emergency Line: (002) 012612457</span></h2>
+                        <h2 className=" font-medium flex items-center gap-4"><FaLocationDot /> <span>Location: Street 68, Mahattan,
                             New York</span></h2>
-                        <h2 className="text-lg font-medium flex items-center gap-4"><MdOutlineAccessTime /> <span>Mon - Fri: 8:00 am - 7:00 pm</span></h2>
+                        <h2 className=" font-medium flex items-center gap-4"><MdOutlineAccessTime /> <span>Mon - Fri: 8:00 am - 7:00 pm</span></h2>
                     </div>
                 </div>
 
-                <div className="flex justify-evenly gap-3 my-5 ">
+                <div className="flex flex-wrap justify-evenly gap-3 my-5 ">
                     <a className=" btn-p flex justify-center items-center gap-2" target="blank" href="https://www.facebook.com/sai.ami.393"><FaFacebookF />  Facebook</a>
                     <a className=" btn-p flex justify-center items-center gap-2" target="blank" href="https://www.linkedin.com/in/shah-alom-626322290/"><FaLinkedinIn />  Linkedin</a>
                     <a className=" btn-p flex justify-center items-center gap-2" target="blank" href="https://www.facebook.com/sai.ami.393"><FaTwitter /> Twitter </a>
