@@ -10,21 +10,21 @@ const slides = [
     {
         title: "Experience Cutting-Edge Technology",
         subtitle: "Innovative Electronics for Modern Living",
-        buttonLink: "/products",
+        buttonLink: "/allProducts",
         buttonText: "Shop Now",
         sideImage: sideImg1,
     },
     {
         title: "Discover Advanced Gadgets",
         subtitle: "Top-Notch Devices for Every Need",
-        buttonLink: "/products",
+        buttonLink: "/allProducts",
         buttonText: "Explore Gadgets",
         sideImage: sideImg2,
     },
     {
         title: "Unleash the Power of Innovation",
         subtitle: "State-of-the-Art Electronics at Your Fingertips",
-        buttonLink: "/products",
+        buttonLink: "/allProducts",
         buttonText: "See More",
         sideImage: sideImg3,
     }

@@ -64,16 +64,17 @@ const AllProduct = () => {
     const totalPages = data?.totalPages || 1;
 
     return (
-        <div className="relative max-w pt-10">
+       <div className="bg-gray-500 bg-opacity-10">
+         <div className="relative max-w pt-10 ">
             {/* heading */}
-            <div className=" relative flex justify-between gap-4 p-4 py-8">
+            <div className=" relative grid grid-cols-7 lg:grid-rows-1 md:grid-rows-1 grid-rows-2   gap-4 p-4 py-8">
                 {/* Category button */}
                 <button
                     onClick={() => {
                         setCatBtn(!openCatBtn);
                         setBrandMenu(false);
                     }}
-                    className="bg-color-p w-3/1 flex gap-2 items-center text-white text-xl font-medium p-4 py-1 rounded-sm cursor-pointer"
+                    className="bg-color-p w-3/1 lg:col-span-2 md:col-span-2 col-span-3  row-start-2 lg:row-start-1 md:row-start-1 flex gap-2 items-center text-white text-xl font-medium p-4 py-1 rounded-sm cursor-pointer"
                 >
                     <FaList />
                     <span>{currentCategory ? currentCategory : 'All Category'}</span>
@@ -85,11 +86,11 @@ const AllProduct = () => {
                 </button>
 
                 {/* search bar */}
-                <div className="flex-1">
+                <div className="flex-1 lg:col-span-3 md:col-span-3 col-span-7 row-start-1">
                     <SearchBar setSearchTerm={setSearchTerm} />
                 </div>
 
-                <div className="w-4/12 flex gap-3 justify-between">
+             
                     {/* Brand button */}
                     <button
                         onClick={() => {
@@ -97,7 +98,7 @@ const AllProduct = () => {
                             setSortMenu(false)
                             setBrandMenu(!openBrandMenu);
                         }}
-                        className="bg-color-p w-full flex gap-2 items-center text-white text-xl font-medium p-4 py-1 rounded-sm cursor-pointer"
+                        className="bg-color-p lg:col-span-1 md:col-span-1 col-span-2 lg:row-start-1 md:row-start-1 col-start-4 row-start-2 w-full flex gap-2 items-center text-white text-xl font-medium p-4 py-1 rounded-sm cursor-pointer"
                     >
                         <span>{currentBrand ? currentBrand : 'Brand'}</span>
                         {openBrandMenu ? (
@@ -112,7 +113,7 @@ const AllProduct = () => {
                         onClick={() => {
                             setBrandMenu(false)
                             setSortMenu(!openSortMenu)}}
-                        className="bg-color-p w-full flex gap-1 items-center text-white text-xl font-medium p-4 py-1 rounded-sm cursor-pointer"
+                        className="bg-color-p lg:col-span-1 md:col-span-1 col-span-2 col-start-6 lg:row-start-1 md:row-start-1  row-start-2 flex gap-1 items-center text-white text-xl font-medium p-4 py-1 rounded-sm cursor-pointer"
                     >
                         <span>{currentSortValue ? currentSortValue : 'Sort By'}</span>
                         {openSortMenu ? (
@@ -121,7 +122,7 @@ const AllProduct = () => {
                             <MdKeyboardArrowUp className="text-4xl" />
                         )}
                     </button>
-                </div>
+               
                 {/* Category Menu */}
                 {openCatBtn && <CategoryMenu className={'absolute bottom-1 w-3/12 shadow-xl '} params={'category'} setCategory={setCategory} openCatBtn={openCatBtn} setCatBtn={setCatBtn} ></CategoryMenu>}
                 {openBrandMenu && <CategoryMenu className={' absolute bottom-1 shadow-xl  -3/12'} params={'brand'} setCategory={setBrand} openCatBtn={openBrandMenu} setCatBtn={setBrandMenu} ></CategoryMenu>}
@@ -162,12 +163,12 @@ const AllProduct = () => {
                         {isPending && <Loading></Loading>}
                         {error && <ErrorPage></ErrorPage>}
                         {data?.products && (
-                            <div className=" grid grid-cols-3 gap-4 my-5">
+                            <div className={` grid ${cardLayOut?'grid-cols-2':'grid-cols-3'} gap-4 my-5`}>
                                 {/* Render products */}
                                 {data?.products?.map(product => (
-                                    <div className=" overflow-hidden border" key={product.id}>
+                                    <div className=" overflow-hidden border shadow-xl" key={product.id}>
 
-                                        <ProductCard  data={product} ></ProductCard>
+                                        <ProductCard cardLayOut={cardLayOut} data={product} ></ProductCard>
                                     </div>
                                        
                                 ))}
@@ -210,6 +211,7 @@ const AllProduct = () => {
            
 
         </div>
+       </div>
     );
 };
 
