@@ -1,5 +1,5 @@
-import  { useState } from 'react';
-import img from '../../../assets/image/who_we Are.jpg';
+import { useState } from 'react';
+import img from '../../../assets/image/about_us_img_11.png';
 
 const WhoWeAre = () => {
     const [showFullText, setShowFullText] = useState(false);
@@ -9,14 +9,15 @@ const WhoWeAre = () => {
     };
 
     const fullText = `
-        Our mission is to create connections through the lifesaving act of blood donation. We provide a platform where users can request blood, register to donate, and connect with blood banks. By leveraging our extensive blood bank database, users can easily find the blood they need and registered donors can conveniently offer their blood.
-        Through our platform, we aim to make the process of blood donation swift, simple, and efficient. We strive to encourage blood donation and bring positive changes to people’s lives. We believe that through the act of donating blood, we can save many lives and support those in urgent medical need.
+        We are a dedicated e-commerce platform that connects customers with high-quality products across a wide range of categories, including Boats, Office Supplies, Technology, and Home essentials. Our mission is to simplify your shopping experience by offering a one-stop solution for all your needs.
+        
+        With a commitment to exceptional service and a seamless online shopping experience, we provide our users with access to an extensive selection of products that cater to both professional and personal use. Whether you're looking to upgrade your workspace, enhance your tech setup, find the perfect home item, or explore new adventures on the water, we’ve got you covered.
 
-        Your Support is Vital: Your valuable support and blood donations are essential to the success of our initiative. Join us, donate blood, contribute financially, and make a difference in people’s lives.
+        Why Choose Us: At our core, we believe in delivering quality, convenience, and satisfaction. Our platform is designed to make your online shopping experience easy, efficient, and enjoyable. From fast delivery to reliable customer support, we're here to ensure you find exactly what you need.
 
-        Our Goal: To eliminate blood shortages, save lives, and build a strong, supportive community where blood donation is a common and accepted practice.
+        Our Vision: To be the leading online marketplace where customers can discover and purchase the best products with confidence, knowing that we prioritize quality, affordability, and customer service.
 
-        Stay connected with us and help create life-saving connections through blood donation.
+        Join us on this journey as we continue to grow and offer even more products that meet the diverse needs of our customers. Shop with us and experience the difference of a marketplace built around your convenience and satisfaction.
     `;
 
     const previewText = fullText.substring(0, 350);
@@ -24,27 +25,29 @@ const WhoWeAre = () => {
     return (
         <div className='max-w'>
             <div id="section1" className="grid gap-5 lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-start py-6">
-                <div className='lg:px-10 md:px-8 px-4'>
-                    <h1 className='text-4xl font-bold mb-3 text-black'>Who We Are</h1>
-                    <h3 className='text-lg font-semibold mb-3'>Connecting Lives Through Blood Donation</h3>
-                  <div className="text-gray-600 font-medium">
-                  <p>
-                        {showFullText ? fullText : `${previewText}`}
-                    </p>
-                    {!showFullText && (
-                      <span>  <br />
-                       <strong> Your Support is Vital:</strong> Your valuable support and blood donations are essential to the success of our initiative. Join us, donate blood, contribute financially, and make a difference in people’s lives.</span>
-                       
-                        
-                    )}
-                    {showFullText && (
-                        <div>
-                            <strong>Your Support is Vital:</strong> Your valuable support and blood donations are essential to the success of our initiative. Join us, donate blood, contribute financially, and make a difference in people’s lives.<br /><br />
-                            <strong>Our Goal:</strong> To eliminate blood shortages, save lives, and build a strong, supportive community where blood donation is a common and accepted practice.<br /><br />
-                            Stay connected with us and help create life-saving connections through blood donation.
-                        </div>
-                    )}
-                  </div>
+                <div className='lg:px-10 md:px-8 px-4 '>
+                   <div className="border-l-8 border-color-p pl-2">
+                   <h3 className='text-lg font-semibold mb-3 text-color-p'>Your Trusted Marketplace</h3>
+                   <h1 className='text-4xl font-bold mb-3 text-black'>Who We Are</h1>
+                   </div>
+                    <div className="text-gray-600 font-medium">
+                        <p>
+                            {showFullText ? fullText : `${previewText}`}
+                        </p>
+                        {!showFullText && (
+                            <span>
+                                <br />
+                                <strong>Why Choose Us:</strong> We prioritize quality, convenience, and customer satisfaction. Shop with confidence knowing that your needs are at the heart of everything we do.
+                            </span>
+                        )}
+                        {showFullText && (
+                            <div>
+                                <strong>Why Choose Us:</strong> We prioritize quality, convenience, and customer satisfaction. Shop with confidence knowing that your needs are at the heart of everything we do.<br /><br />
+                                <strong>Our Vision:</strong> To be the leading online marketplace where customers can discover and purchase the best products with confidence, knowing that we prioritize quality, affordability, and customer service.<br /><br />
+                                Join us on this journey as we continue to grow and offer even more products that meet the diverse needs of our customers. Shop with us and experience the difference of a marketplace built around your convenience and satisfaction.
+                            </div>
+                        )}
+                    </div>
                     <button 
                         onClick={handleToggleText} 
                         className="btn-p mt-3"

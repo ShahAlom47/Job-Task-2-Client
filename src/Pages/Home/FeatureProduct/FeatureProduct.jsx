@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../../CustomHocks/useAxiosPublic';
 import Loading from '../../../SharedComponent/Loading';
@@ -23,11 +23,11 @@ const FeatureProduct = () => {
     if (error) return <ErrorPage></ErrorPage>;
 
     return (
-        <div className="grid grid-cols-1 grid-row-6 md:grid-rows-2 lg:grid-rows-2 md:grid-cols-4 lg:grid-cols-4 gap-4 p-4">
-            {/* h1 Title */}
-            <div className="col-span-2 row-span-1 flex flex-col justify-center items-center">
-                <h2 className="text-2xl font-bold text-center flex w-full justify-center items-center"><Logo></Logo> Collections</h2>
-                <h1 className="text-5xl font-bold text-center mb-6">Featured Products</h1>
+        <div className="lg:grid md:grid grid-cols-1 grid-row-6 md:grid-rows-2 lg:grid-rows-2 md:grid-cols-4 lg:grid-cols-4 gap-4 p-4">
+           
+            <div className="col-span-2 row-span-1 flex flex-col justify-center items-center mb-6">
+                <h2 className="lg:text-2xl text-xl font-bold text-center flex w-full justify-center items-center"><Logo></Logo> Collections</h2>
+                <h1 className="lg:text-5xl  text-4xl font-bold text-center mb-6">Featured Products</h1>
                 <Link to={'/allProducts'}>
                     <button
                         style={{ width: '150px', backgroundColor: 'transparent', color: '#0063d1', border: 'solid 3px  #0063d1' }}
@@ -66,7 +66,7 @@ const FeatureProduct = () => {
                         className={`absolute bottom-0 left-0 right-0 flex flex-col justify-center items-center transition-all duration-700 ${hoveredIndex === index ? 'h-full' : 'h-0'}`} >
                         <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-black to-transparent opacity-60"></div>
                         <Link
-                            to={`/productDetails/${product._id}`} // fixed id from data._id to product._id
+                            to={`/productDetails/${product._id}`} 
                             className={`absolute active-btn bottom-4 py-2 px-6 bg-blue-500 hover:bg-blue-600 text-white rounded-sm transition-all duration-700 
                                 ${hoveredIndex === index ? 'opacity-100 bottom-1/3' : '-bottom-12 opacity-0'}`} >
                             View Details
