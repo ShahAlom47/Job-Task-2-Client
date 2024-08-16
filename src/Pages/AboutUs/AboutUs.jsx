@@ -1,6 +1,5 @@
 import PageHeading from "../../Components/PageHeading";
 import bg from '../../assets/image/AboutUs-bg.jpg'
-import ContactSection from "../Home/ContactSection/ContactSection";
 import DonationProcess from "./DonationProcess/DonationProcess";
 import WhoWeAre from "./WhoWeAre/WhoWeAre";
 
@@ -13,7 +12,6 @@ const AboutUs = () => {
             <div className=" p-4">
                 <WhoWeAre></WhoWeAre>
                 <DonationProcess></DonationProcess>
-                <ContactSection></ContactSection>
             </div>
 
         </div>

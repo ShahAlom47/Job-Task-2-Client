@@ -10,7 +10,7 @@ const usePhotoHost = () => {
     const handelHost = async (imageFile) => {
         const formData = new FormData();
     formData.append('file', imageFile);
-    formData.append('upload_preset', 'red_love_blood_donation_img'); // আপলোড প্রিসেট সঠিক কিনা নিশ্চিত করুন
+    formData.append('upload_preset', 'red_love_blood_donation_img'); 
 
     try {
       const res = await axios.post(

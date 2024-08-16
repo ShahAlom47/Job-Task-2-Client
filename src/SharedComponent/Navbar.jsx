@@ -11,8 +11,6 @@ import { BiLogIn } from 'react-icons/bi';
 import 'react-tooltip/dist/react-tooltip.css';
 import { Tooltip } from 'react-tooltip';
 import useUser from '../CustomHocks/useUser';
-import NotificationIcon from '../Components/NotificationIcon';
-import { IoIosArrowDown } from 'react-icons/io';
 import useSound from '../CustomHocks/useSound';
 import Logo from './Logo/Logo';
 
@@ -136,9 +134,7 @@ const Navbar = () => {
                     {
                         user ?
                             <div className=' flex items-center justify-end gap-4'>
-                                <div className='pt-2'>
-                                    <NotificationIcon value={8 || 0} userEmail={user?.email}></NotificationIcon>
-                                </div>
+                                
                                 <div className="dropdown dropdown-end p-0 m-0">
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar p-0 m-0">
                                         <div className="w-8 rounded-full">

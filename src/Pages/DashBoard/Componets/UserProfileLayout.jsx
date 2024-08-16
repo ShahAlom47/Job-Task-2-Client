@@ -1,5 +1,4 @@
 
-import { Link } from "react-router-dom";
 import useUser from "../../../CustomHocks/useUser";
 import img from '../../../assets/image/user-fake-profile-img.png'
 import { FiEdit } from "react-icons/fi";
@@ -8,6 +7,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { useState } from "react";
 import Modal from 'react-modal';
 import PhotoForm from "./PhotoForm/PhotoForm";
+import Swal from "sweetalert2";
 
 
 const UserProfileLayout = () => {
@@ -38,9 +38,8 @@ const UserProfileLayout = () => {
                     </div>
 
                     <div className="">
-                        <h1 className="text-3xl font-bold mb-2">{user.name}  <span className="bg-gray-200 rounded-md text-lg px-2">{user.role}</span></h1>
-                        <h2 className=" text-sm"><strong>Blood Group:</strong> <span className=" bg-color- p-1 rounded-full font-semibold text-color-p">{user.bloodGroup}</span></h2>
-                        <h2 className=" text-sm"><strong>Last Donate:</strong> <span className="  rounded-full font-medium ">{user.lastDonate}</span></h2>
+                        <h1 className="text-3xl font-bold mb-2">{user.displayName}  <span className="bg-gray-200 rounded-md text-lg px-2">{user.role}</span></h1>
+                      
 
                     </div>
 
@@ -48,7 +47,9 @@ const UserProfileLayout = () => {
                 </div>
                 <div className="flex justify-end items-end  lg:w-2/12 md:w-2/12 w-full">
 
-                    <Link to={'/donateBlood/user/editProfile'}><button style={{ width: '130px' }} className="btn-p flex justify-center gap-3 items-center "><FiEdit /> Edit Profile</button></Link>
+                    {/* <Link to={'/donateBlood/user/editProfile'}> */}
+                    <button onClick={()=> Swal.fire('This option is temporarily unavailable.')} style={{ width: '130px' }} className="btn-p flex justify-center gap-3 items-center "><FiEdit /> Edit Profile</button>
+                    {/* </Link> */}
                 </div>
 
             </div>

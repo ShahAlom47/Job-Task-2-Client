@@ -4,7 +4,7 @@ import z from '../../assets/logo/z-logo.png'
 
 const Logo = () => {
     return (
-        <div className=" w-full">
+        <div className=" w-36 inline-block">
             <Link to={'/'} className=' w-full'>
                     <button className='flex lg:justify-center md:justify-center items-center overflow-y-hidden w-full'>
                         <img className=' lg:h-16 lg:w-18 md:h-16 md:w-18 w-10 h-10' src={z} alt="logo" />

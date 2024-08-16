@@ -99,7 +99,7 @@ const Register = () => {
                             <label className="block text-gray-700 font-medium">Password</label>
                             <div className='relative input input-bordered rounded w-full mt-1'>
                                 <input
-                                    type={`${showPass ? 'text' : 'password'}`}
+                                    type={`${showPass ? 'text':'password'}`}
                                     {...register("password", {
                                         required: "Password is required",
                                         minLength: {
@@ -111,7 +111,7 @@ const Register = () => {
                                             message: "Password must contain at least one letter and one number"
                                         }
                                     })}
-                                    className=" mt-1"
+                                    className=" mt-1 h-full"
                                 />
                                 <button className='absolute top-1/4 right-5' onClick={() => setShowPass(!showPass)}>{showPass ? <IoIosEyeOff /> : <IoIosEye />}</button>
                             </div>

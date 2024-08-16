@@ -2,14 +2,15 @@
 
 
 import Banner2 from "./Banner/Banner2";
-import ContactSection from "./ContactSection/ContactSection";
+import FeatureProduct from "./FeatureProduct/FeatureProduct";
 
 const Home = () => {
     return (
         <div className=" ">
             <Banner2></Banner2>
+            <FeatureProduct></FeatureProduct>
           
-            <ContactSection></ContactSection>
+           
         </div>
     );
 };

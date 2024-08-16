@@ -12,6 +12,7 @@ import CategoryMenu from "./DropDownMenu/DropDownMenu";
 import Loading from "../../SharedComponent/Loading";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import ProductCard from "./ProductCard/ProductCard";
+import DataNotAvailable from "../../SharedComponent/DataNotAvailable";
 
 const AllProduct = () => {
     const AxiosPublic = useAxiosPublic();
@@ -59,15 +60,15 @@ const AllProduct = () => {
         }
     });
 
-   
+   console.log(data);
 
     const totalPages = data?.totalPages || 1;
 
     return (
        <div className="bg-gray-500 bg-opacity-10">
-         <div className="relative max-w pt-10 ">
+         <div className="relative max-w lg:pt-10 md:pt-8 p-2 ">
             {/* heading */}
-            <div className=" relative grid grid-cols-7 lg:grid-rows-1 md:grid-rows-1 grid-rows-2   gap-4 p-4 py-8">
+            <div className=" relative grid grid-cols-7 lg:grid-rows-1 md:grid-rows-1 grid-rows-2   gap-4 p-4 lg:py-8 md:py-8 py-2">
                 {/* Category button */}
                 <button
                     onClick={() => {
@@ -134,7 +135,7 @@ const AllProduct = () => {
 
 
             {/* Main Content */}
-            <div id="content" className="flex gap-3 mb-5 p-5">
+            <div id="content" className="flex lg:flex-row md:flex-row flex-col-reverse gap-3 mb-5 lg:p-5 md:p-5 p-1">
                 <div className="flex-1">
                     <div className="bg-gray-200 border flex justify-between p-5">
                         <h1 className="text-xl font-semibold">
@@ -162,8 +163,8 @@ const AllProduct = () => {
                         {/* Card container */}
                         {isPending && <Loading></Loading>}
                         {error && <ErrorPage></ErrorPage>}
-                        {data?.products && (
-                            <div className={` grid ${cardLayOut?'grid-cols-2':'grid-cols-3'} gap-4 my-5`}>
+                        {data?.products.length>0 ? (
+                            <div className={` grid ${cardLayOut?'lg:grid-cols-2 md:grid-cols-1 grid-cols-1':'lg:grid-cols-3 md:grid-cols-2 grid-cols-1'} gap-4 my-5`}>
                                 {/* Render products */}
                                 {data?.products?.map(product => (
                                     <div className=" overflow-hidden border shadow-xl" key={product.id}>
@@ -173,7 +174,9 @@ const AllProduct = () => {
                                        
                                 ))}
                             </div>
-                        )}
+                        )  :<DataNotAvailable></DataNotAvailable>
+                        
+                        }
                     </div>
 
                      {/* Pagination */}
@@ -198,7 +201,7 @@ const AllProduct = () => {
             </div>
                 </div>
 
-                <aside className="w-3/12">
+                <aside className="lg:w-3/12 md:w-3/12 w-full">
                     <div className="border p-2">
                         <PriceFilter
                             setMinPriceRange={setMinPriceRange}

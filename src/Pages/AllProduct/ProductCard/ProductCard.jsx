@@ -6,7 +6,7 @@ import StarRatings from 'react-star-ratings';
 const ProductCard = ({cardLayOut, data }) => {
     const [hovered, setHovered] = useState(false);
 
-    console.log(data);
+   
     const handleMouseEnter = () => {
         setHovered(true);
     };
@@ -25,8 +25,7 @@ const ProductCard = ({cardLayOut, data }) => {
             <div className={` ${cardLayOut?'w-1/2':'w-full'} flex justify-center`}>
             <div className={`${cardLayOut?'w-44 h-36':'w-44 h-48'} mb-5 relative bg-gray-100 overflow-hidden `}>
                 <img
-                    className={`w-full h-full transition-transform duration-500 ${hovered ? 'transform scale-110' : 'transform scale-100'
-                        }`}
+                    className={`w-full h-full transition-transform duration-500 ${hovered ? 'transform scale-110' : 'transform scale-100' }`}
                     src={data?.productImage}
                     alt="product photo"
                 />
@@ -39,6 +38,9 @@ const ProductCard = ({cardLayOut, data }) => {
           <h1 className="text-lg font-semibold">{data?.productName}</h1>
             <h1 className="text-lg">
                 <strong>Price:</strong> {data?.price} TK
+            </h1>
+            <h1 className="text-lg">
+                <strong>Date:</strong> {  new Date(data?.createdAt).toLocaleDateString() }
             </h1>
             <StarRatings
                 rating={data?.ratings}
