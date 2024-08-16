@@ -41,7 +41,7 @@ const AllBloodRequest = () => {
     });
 
 
-console.log(data);
+console.log(modalData);
   
     
 
@@ -70,7 +70,7 @@ console.log(data);
         brand: product.brand,
         price: product.price,
         date: new Date(product.createdAt).toLocaleDateString(),
-        available: product.requireDate,
+        available: (<img className='w-10 h-42' src={product.productImage}></img>),
 
 
         edit: (
