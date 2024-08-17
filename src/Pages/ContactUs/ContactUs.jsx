@@ -5,11 +5,15 @@ import img from '../../assets/image/contact-bg.jpg'
 import { MdOutlineAccessTime } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 const ContactUs = () => {
     return (
         <div>
+             <Helmet>
+                <title> Contact Us - Z-Zone</title>
+            </Helmet>
             <PageHeading title={'Contact Us'} img={img}></PageHeading>
             <div className="max-w lg:p-10 md:p-5 p-2">
                 <div className="shadow-xl lg:p-10 md:p-5 p-2 flex lg:flex-row md:flex-row flex-col gap-6">

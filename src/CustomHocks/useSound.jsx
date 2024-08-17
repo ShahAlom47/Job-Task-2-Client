@@ -1,4 +1,7 @@
 import { useCallback } from 'react';
+import click from '../assets/sound/double-click.wav'
+import success from '../assets/sound/success-Sound.wav'
+import error from '../assets/sound/error_sound.wav'
 
 const useSound = () => {
     const playSound = useCallback((type) => {
@@ -6,11 +9,11 @@ const useSound = () => {
 
         // Check the type of sound and create a new Audio instance
         if (type === 'click') {
-            sound = new Audio('/src/assets/sound/double-click.wav'); 
+            sound = new Audio(click); 
         } else if (type === 'success') {
-            sound = new Audio('/src/assets/sound/success-Sound.wav');
+            sound = new Audio(success);
         } else if (type === 'error') {
-            sound = new Audio('/src/assets/sound/error_sound.wav');
+            sound = new Audio(error);
         } else {
             console.error('Unknown sound type');
             return;

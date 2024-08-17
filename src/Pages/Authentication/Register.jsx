@@ -12,6 +12,7 @@ import { updateProfile } from 'firebase/auth';
 import auth from '../../../firebase.config';
 import useAxiosPublic from '../../CustomHocks/useAxiosPublic';
 import SocialLogin from '../../SharedComponent/SocialLogin/SocialLogin';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -64,6 +65,9 @@ const Register = () => {
 
     return (
         <div>
+             <Helmet>
+                <title> Register - Z-Zone</title>
+            </Helmet>
             <PageHeading img={img} title={'Register '} />
             <ToastContainer />
             <div className="max-w my-5">

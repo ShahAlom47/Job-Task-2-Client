@@ -13,6 +13,7 @@ import { Tooltip } from 'react-tooltip';
 import useUser from '../CustomHocks/useUser';
 import useSound from '../CustomHocks/useSound';
 import Logo from './Logo/Logo';
+import { IoCartOutline } from 'react-icons/io5';
 
 const Navbar = () => {
     const [isOpen, setOpen] = useState(false);
@@ -117,6 +118,13 @@ const Navbar = () => {
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             )}
         </label>
+        <NavLink
+           to={'/allProducts'}
+            className={({ isActive }) =>
+                `nav-link hover:underline px-3 rounded-sm ${isActive ? 'bg-slide-animation is-active' : ''}`
+            }
+        ><IoCartOutline /></NavLink>
+       
     </>
 
 
@@ -134,7 +142,8 @@ const Navbar = () => {
                     {
                         user ?
                             <div className=' flex items-center justify-end gap-4'>
-                                
+
+
                                 <div className="dropdown dropdown-end p-0 m-0">
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar p-0 m-0">
                                         <div className="w-8 rounded-full">

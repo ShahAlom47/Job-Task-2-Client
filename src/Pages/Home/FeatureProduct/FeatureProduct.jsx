@@ -26,7 +26,7 @@ const FeatureProduct = () => {
         <div className="lg:grid md:grid grid-cols-1 grid-row-6 md:grid-rows-2 lg:grid-rows-2 md:grid-cols-4 lg:grid-cols-4 gap-4 p-4">
            
             <div className="col-span-2 row-span-1 flex flex-col justify-center items-center mb-6">
-                <h2 className="lg:text-2xl md:text-xl text-lg font-bold text-center flex w-full justify-center items-center"><Logo ></Logo> <span className='-ml-4'>Collections</span></h2>
+                <h2 className="lg:text-2xl md:text-xl text-lg font-bold text-center flex w-full justify-center items-center"><Logo ></Logo> <span className='-ml-3 pt-2'>Collections</span></h2>
                 <h1 className="lg:text-5xl md:text-4xl  text-xl font-bold text-center mb-6">Featured Products</h1>
                 <Link to={'/allProducts'}>
                     <button

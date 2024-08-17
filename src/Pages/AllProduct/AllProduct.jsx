@@ -13,6 +13,7 @@ import Loading from "../../SharedComponent/Loading";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import ProductCard from "./ProductCard/ProductCard";
 import DataNotAvailable from "../../SharedComponent/DataNotAvailable";
+import { Helmet } from "react-helmet";
 
 const AllProduct = () => {
     const AxiosPublic = useAxiosPublic();
@@ -66,13 +67,17 @@ const AllProduct = () => {
 
     return (
         <div className="bg-gray-500 bg-opacity-10">
+            <Helmet>
+                <title>All Product - Z-Zone</title>
+            </Helmet>
             <div className="relative max-w lg:pt-10 md:pt-8 p-2 ">
                 {/* heading */}
                 <div className=" relative grid grid-cols-7 lg:grid-rows-1 md:grid-rows-1 grid-rows-3  lg:gap-5 md:gap-5  gap-2 p-4 lg:py-8 md:py-8 py-2">
                     {/* Category button */}
                     <button onClick={() => {
                         setCatBtn(!openCatBtn);
-                        setBrandMenu(false); }}
+                        setBrandMenu(false);
+                    }}
                         className="bg-color-p lg:h-12 md:h-12 h-6  lg:col-span-2 md:col-span-2 col-span-7  row-start-2 lg:row-start-1 md:row-start-1 flex gap-2 justify-center items-center text-white lg:text-xl md:text-xl text-sm font-medium lg:p-4 md:p-4 p-1   rounded-sm cursor-pointer"
                     >
                         <FaList />
@@ -92,7 +97,8 @@ const AllProduct = () => {
                     <button onClick={() => {
                         setCatBtn(false);
                         setSortMenu(false)
-                        setBrandMenu(!openBrandMenu);}}
+                        setBrandMenu(!openBrandMenu);
+                    }}
                         className="bg-color-p lg:h-12 md:h-12 h-6  lg:col-span-1 md:col-span-1 col-span-3 lg:row-start-1 md:row-start-1 col-start-1 row-start-3 w-full flex gap-2 items-center text-white lg:text-xl md:text-xl text-sm font-medium p-2 rounded-sm cursor-pointer"
                     >
                         <span>{currentBrand ? currentBrand : 'Brand'}</span>
@@ -105,8 +111,9 @@ const AllProduct = () => {
                     {/* Sort Button */}
                     <button onClick={() => {
                         setBrandMenu(false)
-                        setSortMenu(!openSortMenu)}}
-                        className="bg-color-p lg:h-12 md:h-12 h-6  lg:col-span-1 md:col-span-1 col-span-4 col-start-4 lg:row-start-1 md:row-start-1  row-start-3 flex gap-1 items-center text-white lg:text-xl md:text-xl text-sm font-medium p-2 rounded-sm cursor-pointer"
+                        setSortMenu(!openSortMenu)
+                    }}
+                        className="bg-color-p lg:h-12 md:h-12 h-6  lg:col-span-1 md:col-span-1 col-span-4 col-start-4 lg:row-start-1 md:row-start-1  row-start-3 flex gap-1 items-center text-white lg:text-lg md:text-lg text-sm font-medium p-2 rounded-sm cursor-pointer"
                     >
                         <span>{currentSortValue ? currentSortValue : 'Sort By'}</span>
                         {openSortMenu ?
@@ -128,7 +135,7 @@ const AllProduct = () => {
                     <div className="flex-1">
                         <div className="bg-gray-200 border flex justify-between p-5">
                             <h1 className="text-xl font-semibold">
-                                {currentBrand ? currentCategory : "All"}
+                                {currentCategory ? currentCategory : "All"}
                             </h1>
                             <div className="flex items-center text-xl gap-1 font-medium">
                                 <span>View</span>
@@ -152,9 +159,11 @@ const AllProduct = () => {
                             {/* Card container */}
                             {isPending && <Loading></Loading>}
                             {error && <ErrorPage></ErrorPage>}
+
+
                             {data?.products.length > 0 ? (
                                 <div className={` grid ${cardLayOut ? 'lg:grid-cols-2 md:grid-cols-1 grid-cols-1' : 'lg:grid-cols-3 md:grid-cols-2 grid-cols-1'} gap-4 my-5`}>
-                                    {/* Render products */}
+                                   
                                     {data?.products?.map(product => (
                                         <div className=" overflow-hidden border shadow-xl" key={product.id}>
                                             <ProductCard cardLayOut={cardLayOut} data={product} ></ProductCard>
@@ -162,9 +171,8 @@ const AllProduct = () => {
 
                                     ))}
                                 </div>
-                            ) : <DataNotAvailable></DataNotAvailable>
+                            ) : <DataNotAvailable></DataNotAvailable> }
 
-                            }
                         </div>
 
                         {/* Pagination */}

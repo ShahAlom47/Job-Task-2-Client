@@ -2,6 +2,8 @@
 
 // eslint-disable-next-line react/prop-types
 const SortMenu = ({setSortValue,openSortMenu,setSortMenu}) => {
+
+
     return (
         <div>
             <div className={`   absolute top-full right-[1%]  -mt-5  bg-white shadow-lg rounded-sm z-50 transition-all duration-300 ease-in-out overflow-y-scroll ${openSortMenu ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -13,7 +15,7 @@ const SortMenu = ({setSortValue,openSortMenu,setSortMenu}) => {
                             key={1}
                             onClick={() => {
                                 setSortMenu(false)
-                                setSortValue('High to Low')
+                                setSortValue('High--Low')
                             }}
                             className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                         >
@@ -23,7 +25,7 @@ const SortMenu = ({setSortValue,openSortMenu,setSortMenu}) => {
                             key={2}
                             onClick={() => {
                                 setSortMenu(false)
-                                setSortValue('Low to High')
+                                setSortValue('Low--High')
                             }}
                             className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                         >
@@ -38,6 +40,16 @@ const SortMenu = ({setSortValue,openSortMenu,setSortMenu}) => {
                             className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
                         >
                           Latest Product
+                        </li>
+                        <li
+                            key={3}
+                            onClick={() => {
+                                setSortMenu(false)
+                                setSortValue('Top Ratings')
+                            }}
+                            className="py-1 border-b-2 px-4 lg:font-semibold md:font-semibold hover:bg-gray-100 cursor-pointer"
+                        >
+                          Top Ratings
                         </li>
 
 

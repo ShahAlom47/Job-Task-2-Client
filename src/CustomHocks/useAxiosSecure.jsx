@@ -12,8 +12,8 @@ import Swal from "sweetalert2";
 
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:3000',
-  // baseURL: 'https://blood-donation-server-zeta.vercel.app',
+  baseURL:'https://z-zone-server.vercel.app',
+  
   withCredentials: true,
 });
 

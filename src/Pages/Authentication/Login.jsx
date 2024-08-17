@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
 import SocialLogin from '../../SharedComponent/SocialLogin/SocialLogin';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -48,6 +49,9 @@ const Login = () => {
  
     return (
         <div>
+             <Helmet>
+                <title> Login - Z-Zone</title>
+            </Helmet>
             <ToastContainer />
             <PageHeading img={img} title={'Login '} />
             <div className="max-w   py-10 ">

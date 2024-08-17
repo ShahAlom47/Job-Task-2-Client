@@ -6,6 +6,7 @@ import ErrorPage from "../../ErrorPage/ErrorPage";
 import StarRatings from "react-star-ratings";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const ProductDetails = () => {
@@ -35,13 +36,16 @@ const ProductDetails = () => {
     if (isLoading) return <Loading></Loading>
     if (error) return <ErrorPage></ErrorPage>
     return (
-        <div className=" max-w p-4 py-7">
+        <div className=" max-w lg:p-4 md:p-4 p-1 lg:py-7 md:py-5 py-2">
+             <Helmet>
+                <title> Details- Product- Z-Zone</title>
+            </Helmet>
             <h1 className="text-4xl border-l-4 my-6 pl-3 font-bold border-color-p">Details</h1>
-            <div className=" flex p-5 bg-gray-300 bg-opacity-20">
-                <div className=" w-1/2 max-h-screen   shadow-xl p-3 ">
+            <div className=" lg:flex md:flex lg:p-5 md:p-5 p-2 bg-gray-300 bg-opacity-20">
+                <div className=" lg:w-1/2 md:w-1/2 lg:max-h-screen  md:max-h-screen  shadow-xl p-3 overflow-hidden">
                     <img className="w-full h-full " src={data?.productImage} alt="" />
                 </div>
-                <div className=" p-5  flex flex-col justify-center">
+                <div className="lg:p-4 md:p-4 p-2 py-5   flex flex-col justify-center">
 
                    <div className=" mb-5">
                    <h1 className=" font-bold text-xl ">{data.productName}</h1>
@@ -59,7 +63,7 @@ const ProductDetails = () => {
                     <p className="mb-5"> <strong> Price:</strong> <span className="text-color-p font-semibold">{data.price} </span> TK</p>
                    <div className=" my-3">
                    <p className="">{data.availableProduct} In Stock</p>
-                   <div className="flex items-center my-3 gap-6">
+                   <div className="flex flex-wrap items-center my-3 gap-6">
                     <div className=" flex items-center h-10 border-color-p border ">
                         <button onClick={decrementProductQuantity} className=" btn  btn-sm h-full text-lg font-bold rounded-sm">--</button>
                         <p className="text- font-semibold h-full min-w-10 border-x-2 border-color-p flex justify-center items-center bg-gray-100">{quantity}</p>
